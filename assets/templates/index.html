@@ -1,0 +1,59 @@
+<div class="card-deck">
+        <div class="card border-info mb-3" style="max-width: 75%;">
+          <h5><div class="card-header"><span class="border-right"><img src="assets/images/icon.ico" alt="adeptio" data-toggle="tooltip" title="Adeptio Coin" class="rounded-0"></span>
+          <b>My Adeptio Wallet</b>
+          <img class="rounded float-right d-none" id="platinum-level" src="assets/images/extra_level.png" alt="extralevel" width="75" data-toggle="tooltip" title="Level Max Out">
+          <img class="rounded float-right d-none" id="bronze-level" src="assets/images/bronze1.png" alt="level" width="50" data-toggle="tooltip" title="Bronze Level < 50 000 ADE">
+          <img class="rounded float-right d-none" id="silver-level" src="assets/images/silver1.png" alt="level" width="50" data-toggle="tooltip" title="Silver Level < 300 000 ADE">
+          <img class="rounded float-right d-none" id="gold-level" src="assets/images/gold1.png" alt="level" width="50" data-toggle="tooltip" title="Gold Level < 1000 000 ADE">
+          <img class="rounded float-right" src="assets/images/Mastercard-logo-2016-640x455.png" alt="mastercard" width="72" data-toggle="tooltip" title="Mobile Payments in Development...">
+        </div></h5>
+
+          <div class="card-body text-primary">
+
+            <div class="row">
+              <div class="col">
+                <h3 class="text-my-primary">$ <span id="setAllAdePriceInUsd" data-toggle="tooltip" title="Balance in USD">Loading, please wait...</span></h3>
+                <br>
+                </span><h6 class="text-dark"><span id="mainWalletAddr"></span></h6>
+                <br>
+                <h3 class="text-dark"><span id="checkBalance" data-toggle="tooltip" title="Your total Balance"></span> ADE</h3>
+              </div>
+              <div class="col">
+                <h7><canvas id="canvas" data-toggle="tooltip" title="Scan wallet addr with QR-Code"></canvas></h7>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="card border-info mb-3" style="max-width: 12rem;">
+          <span class="card-header bg-transparent border-info text-center" onclick="playbtn()" id="mainNavBtnSend2"><p class="card-text"><center><img src="assets/images/share.png" class="rounded mr-2 pointer" alt="plane" width="52" data-toggle="tooltip" title="Quick Send"></center></p></span>
+          <span class="card-body text-success">
+            <center><span id="infoBoxPrice" class="card-text text-my-primary d-none" ><b><span id="setAdePriceInUsd">Loading price...</span></b></span></center>
+            <center><span id="infoBoxBlock" class="card-text text-my-primary  d-none"><b><span id="blockCount2">Loading blocks...</span></b></span></center>
+            <center><span id="infoBoxConnections" class="card-text text-my-primary d-none"><b><span id="countConnections2">Loading connections...</span></b></span></center>
+            <center><span id="infoBoxMyMn" class="card-text text-my-primary  d-none"><b><span id="MyMasternodesEnabledCount2">Loading my MN...</span></b></span></center>
+            <center><span id="infoBoxAllMn" class="card-text text-my-primary  d-none"><b><span id="MasternodesEnabledCount2">Loading NET MN...</span></b></span></center>
+            <center><span id="infoBoxDiff" class="card-text text-my-primary  d-none"><b><span id="getDiff">Loading diff...</span></b></span></center>
+            <center><span id="infoBoxStorade" class="card-text text-my-primary  d-none"><b><span id="StoradeEnabledCount2">Loading storADE...</span></b></span></center>
+            <center><span id="infoBoxStoradeFreeSpace" class="card-text text-my-primary  d-none"><b><span id="StoradeFreeSpace2">Loading sFree...</span></b></span></center>
+            <center><span id="infoBoxMoneySupply" class="card-text text-my-primary d-none"><b><span id="GetMoneySupply">Loading coin supply...</span></b></span></center>
+          </span>
+          <span class="card-footer bg-transparent border-info text-center" onclick="playbtn()" id="mainNavBtnWallets2"><p class="card-text"><center><img src="assets/images/inbox.png" class="rounded mr-2 pointer" alt="plane" width="52" data-toggle="tooltip" title="Quick Receive"></center></p></span>
+        </span>
+      </div>
+    </div>
+
+<table id="tx-tableIndex" class="table table-sm">
+    <thead>
+      <tr>
+        <th class="text-center">Block</th>
+        <th class="text-center">Time</th>
+        <th class="text-center">Hash</th>
+        <th class="text-center">Recipients</th>
+        <th class="text-center">Amount</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      
+    </tbody>
+  </table>

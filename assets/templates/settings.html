@@ -1,0 +1,107 @@
+<br>
+
+<audio id="playLockedWallet" src="assets/sounds/newallet.ogg"></audio>
+<audio id="playUnLockedWallet" src="assets/sounds/newallet.ogg"></audio>
+
+<form id="lockAdeptioWallet">
+<div class="modal fade" id="doLockAdeptioWallet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Lock the wallet (note: staking will be disabled)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Password: (only letters and numbers (no special symbols!)</label>
+            <input type="text" name="lockPassword" class="form-control" id="recipient-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-primary" type="submit">Lock</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form id="unlockAdeptioWallet">
+<div class="modal fade" id="doUnLockAdeptioWallet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Unlock the wallet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Password:</label>
+            <input type="text" name="unlockPassword" class="form-control" id="recipient-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-primary" type="submit">Unlock</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  	<tr>
+      <th scope="row"></th>
+      <td>
+      <span><img src="assets/images/root-directory.png" alt="OK" width="32" height=""></span>
+      <b>Default adeptio (blockchain) data directory</b>
+     </td>
+      <td>
+      <button id="select-directory" type="button" class="btn btn-info btn-sm"><span id="selected-file"></span><span id="setUserHome">?</span></button></td>
+    </tr>
+      <tr>
+      <th scope="row"></th>
+      <td>
+      <span><img src="assets/images/key.png" alt="OK" width="32" height=""></span>
+      <b>Backup wallet.dat file</b>
+     </td>
+      <td>
+      <button id="select-wallet-dat" type="button" class="btn btn-warning btn-sm"><span id="selected-file"></span>wallet.dat</button></td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td>
+      <span><img src="assets/images/speaker.png" alt="OK" width="32" height=""></span>
+      <b>Sounds</b></td>
+      <td>
+      <button type="button" id="mute-button" class="btn btn-success btn-sm mute-button-color">ON</button><button type="button" id="unmute-button" class="btn btn-warning btn-sm d-none unmute-button-color">OFF</button></td>
+    </tr>
+     <tr>
+      <th scope="row"></th>
+      <td>
+      <span><img src="assets/images/padlock2.png" alt="OK" width="32" height=""></span>
+      <b>Wallet lock</b></td>
+      <td>
+
+      <button type="button" id="wallet-lock-button" data-toggle="modal" data-target="#doLockAdeptioWallet" class="btn btn-warning btn-sm buttonWalletUnlocked">Unlocked</button>
+
+      <button type="button" data-toggle="modal" data-target="#doUnLockAdeptioWallet" id="wallet-unlock-button" class="btn btn-success btn-sm d-none buttonWalletLocked">Locked</button></td>
+    </tr>
+    <tr>
+  </tbody>
+</table>
+

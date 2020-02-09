@@ -1,0 +1,65 @@
+<div class="alert alert-warning" role="alert">
+  <span><img src="assets/images/project-management.png" alt="OK" width="24" height=""></span> Wallet in <b>BETA</b> testing mode. Please be carefull with your funds!
+</div>
+
+<div class="alert alert-danger d-none buttonWalletLocked" role="alert">
+  <span><img src="assets/images/padlock2.png" alt="OK" width="24" height=""></span> Wallet is locked, please unlock it first!
+</div>
+
+<div class="alert alert-success d-none" id="successSend" role="alert">
+  <span><img src="assets/images/sendqq.png" alt="OK" width="24" height=""></span> You successfully sent to: <span id="successSendAddr"></span>
+</div>
+
+<br>
+<!--<center><button id="mainNavBtnSend" type="button" class="btn btn-outline-success">Simple</button>
+<button id="mainNavBtnSend_advanced" type="button" class="btn btn-outline-primary">Advanced</button></center>-->
+
+<form id="unlockAdeptioWalletFromSend">
+<div class="modal fade" id="WalletFromSendUnlockAdeptio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Unlock the wallet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Password:</label>
+            <input type="text" name="unlockPassword" class="form-control" id="recipient-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-primary" type="submit">Unlock</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<form id="sendAdeptioTo">
+  <div class="form-flex">
+    <div class="col-md-7 mb-3">
+      <h5 label for="validationServer03">Send to:</label></h5>
+      <input type="text" name="address" class="form-control text-dark" id="validationServer03" placeholder="" required>
+      <div class="invalid-feedback invalid-address d-none">
+        Please provide a valid ADE address.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <h5 label for="validationServer05">Amount:</label></h5>
+      <input type="text" name="amount" class="form-control text-dark" id="validationServer05" placeholder="" required>
+      <div class="invalid-feedback invalid-amount d-none">
+        Provide a valid ammount of ADE.
+      </div>
+    </div>
+  </div>
+  </div>
+  <br>
+  <button id="sendAdeptioToSendButton" class="btn btn-primary sendWalletLockedButton" type="submit" >Send</button>
+  <button type="button" data-toggle="modal" data-target="#WalletFromSendUnlockAdeptio" class="btn btn-warning d-none buttonWalletLocked">Unlock</button></td>
+</form>

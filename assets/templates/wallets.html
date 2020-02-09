@@ -1,0 +1,126 @@
+<br>
+
+<div class="alert alert-danger d-none buttonWalletLocked" role="alert">
+  <span><img src="assets/images/padlock2.png" alt="OK" width="24" height=""></span> Wallet is locked, you cannot import or export your PrivKeys!
+</div>
+
+<div class="alert alert-success d-none" id="successWalletCreation" role="alert">
+  <span><img src="assets/images/wallet.png" alt="OK" width="24" height=""></span> You successfully created new wallet address: <span id="successAddrName"></span>
+</div>
+
+<div class="alert alert-danger d-none" id="failedWalletCreation" role="alert">
+  Error, failed!
+</div>
+
+<div class="alert alert-success d-none" id="successWalletPrivKeyExp" role="alert">
+  <span><img src="assets/images/key.png" alt="OK" width="24" height=""></span> Private Key of this wallet is: <span id="successWalletPrivKeyExportToPopUp"></span>
+</div>
+
+<div class="alert alert-success d-none" id="successWalletCopy" role="alert">
+  <span><img src="assets/images/papers.png" alt="OK" width="24" height=""></span> Wallet addr copied to the clipboard!</span>
+</div>
+
+<div class="alert alert-success d-none" id="successPrivKeyImport" role="alert">
+  <span><img src="assets/images/key.png" alt="OK" width="24" height=""></span> You successfully imported new addr: <span id="successPrivKeyImportAddr"></span>
+  - Please take a note, that it takes time to rescan the wallet balance.
+</div>
+
+<button type="button" class="btn-sm btn-info" data-toggle="modal" data-target="#createAdeptioWallet" data-whatever="CreateWallet">+ add new</button>
+<button type="button" class="btn-sm btn-warning" data-toggle="modal" data-target="#importWalletPrivKey">Import PrivKey</button>
+
+<audio id="audioNewAddress" src="assets/sounds/newallet.ogg"></audio>
+
+<form id="getAdeptioWallet">
+<div class="modal fade" id="createAdeptioWallet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Adeptio address</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Label:</label>
+            <input type="text" name="walletlabel" class="form-control" id="recipient-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-primary" type="submit">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<form id="formImportWalletPrivKey">
+<div class="modal fade" id="importWalletPrivKey" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Import Private Key</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Set a Wallet Name:</label>
+            <input type="text" name="privkey-name" class="form-control" id="privkey-nameqq">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Provide PrivKey:</label>
+            <input type="text" name="privkey-hash" class="form-control" id="privkey-pswqq">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-primary" type="submit">Import</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form id="scanQrcodeWallet">
+<div class="modal fade" id="qrcodeWallet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Scan Address with QR-Code</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <div id="canvasWalletText" class="text-center text-my-primary"></div>
+
+        <h7><center><canvas id="canvasWalletAddr" data-toggle="tooltip" title="Scan wallet addr with QR-Code"></canvas></center></h7>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table id="wallets-tableWallets" class="table table-sm">
+  <thead>
+    <tr>
+      <th class="text-center">Label</th>
+      <th class="text-center">Address</th>
+      <th class="text-center">Amount</th>
+      <th class="text-center"></th>
+    </tr>
+  </thead>
+  <tbody class="text-center">
+    
+  </tbody>
+</table>

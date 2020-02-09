@@ -1,0 +1,115 @@
+<br>
+
+<div class="alert alert-danger d-none buttonWalletLocked" role="alert">
+  <span><img src="assets/images/padlock2.png" alt="OK" width="24" height=""></span> Wallet is locked, masternode functionality may not work!
+</div>
+
+<div class="alert alert-success d-none" id="successNewMasterNode" role="alert">
+  <span><img src="assets/images/project-management.png" alt="OK" width="24" height=""></span> New masternode added: <span id="successNewMasterNodeName"></span>
+</div>
+
+<div class="alert alert-success d-none" id="masternodeStart" role="alert">
+  <span><img src="assets/images/project-management.png" alt="OK" width="24" height=""></span><span id="masternodeStartStatus"></span>
+</div>
+
+<div class="alert alert-success d-none" id="successNewGenKey" role="alert">
+  <span><img src="assets/images/key.png" alt="OK" width="24" height=""></span> New masternode PrivKey: <span id="successNewGenKeyId"></span>
+</div>
+
+<div class="alert alert-success d-none" id="successPeer" role="alert">
+  <span><img src="assets/images/network.png" alt="OK" width="24" height=""></span> You successfully added: <span id="successPeerAddr"></span>
+</div>
+
+<center><button id="mainNavBtnMasternodes" type="button" class="btn btn-outline-primary">My Masternodes</button>
+<button id="mainNavBtnMasternodes_list" type="button" class="btn btn-outline-info">Masternode List</button></center>
+
+<button type="button" class="btn-sm btn-info" data-toggle="modal" data-target="#newMasternode" data-whatever="@getbootstrap">+ add new</button>
+<button type="button" class="btn-sm btn-warning" id="newGenKey" data-whatever="@getbootstrap">Gen PrivKey</button>
+<button type="button" class="btn-sm btn-warning" id="newMnOutputs" data-whatever="@getbootstrap">MN outputs</button>
+<button type="button" class="btn-sm btn-warning" id="openMasternodeConfig" data-whatever="@getbootstrap">Open MN conf</button>
+
+<a href="https://wiki.adeptio.cc/books/masternode---vps-setup-guide">
+<img src="assets/images/info.png" class="rounded mr-2 float-right pointer" alt="info" width="25" data-toggle="tooltip" title="Masternode help">
+</a>
+
+<form id="submitNewMasternode">
+<div class="modal fade" id="newMasternode" tabindex="-1" role="dialog" aria-labelledby="newMasternode" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Masternode</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Masternode Name:</label>
+            <input type="text" name="mnName" class="form-control" id="recipient-name">
+          </div>
+            <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Masternode IP & Port (example: 77.21.31.41:9075)</label>
+            <input type="text" name="mnIP" class="form-control" id="recipient-name">
+          </div>
+             <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Masternode PrivKey (example: 7Vw2FGENY21HByLusXogqb53ZvGRtzNRrhbd7BmUh7X2j7N9yE6)</label>
+            <input type="text" name="mnPrivKey" class="form-control" id="recipient-name">
+          </div>
+              <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Masternode tx hash (masternode outputs)</label>
+            <input type="text" name="mnOutput" class="form-control" id="recipient-name">
+          </div>
+            <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Masternode output id (0 or 1)</label>
+            <input type="text" name="mnOutputID" class="form-control" id="recipient-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary">Create Masternode</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="MasterNodeOutputs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Your Masternode Outputs:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <div id="canvasWalletText" class="text-center text-my-primary"></div>
+
+        <h7><center><span id="MasterNodeOutputsData" data-toggle="tooltip" title="Compare with wallet addr and choose the right one"></span></center></h7>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<table id="tx-tableMasternode" class="table table-sm">
+  <thead>
+    <tr>
+      <th class="text-center">Name</th>
+      <th class="text-center">Status</th>
+      <th class="text-center">IP Address</th>
+      <th class="text-center">Output Index</th>
+      <th class="text-center"></th>
+    </tr>
+  </thead>
+  <tbody class="text-center">
+    
+  </tbody>
+</table>
+
